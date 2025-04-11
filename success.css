@@ -1,0 +1,218 @@
+/* Success Page Styles */
+.success-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 200px);
+    padding: 2rem;
+    background-color: #f8f9fa;
+}
+
+.success-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 3rem;
+    max-width: 650px;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.success-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.success-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 2rem;
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(46, 125, 50, 0.3);
+}
+
+.success-icon svg {
+    width: 50px;
+    height: 50px;
+    fill: white;
+}
+
+.success-card h2 {
+    color: #2E7D32;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.success-card h2:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #4CAF50, #2E7D32);
+    border-radius: 2px;
+}
+
+.patient-details {
+    text-align: left;
+    margin: 2.5rem 0;
+    border-top: 1px solid #eee;
+    padding-top: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 2rem;
+}
+
+.detail-row {
+    display: flex;
+    margin-bottom: 1.2rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.detail-row:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.detail-label {
+    font-weight: 600;
+    width: 150px;
+    color: #444;
+    font-size: 1.05rem;
+}
+
+.detail-value {
+    flex: 1;
+    color: #333;
+    font-size: 1.05rem;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2.5rem;
+}
+
+.btn {
+    padding: 1rem 1.8rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.05rem;
+}
+
+.register-another {
+    background: linear-gradient(135deg, #2196F3, #0d47a1);
+    color: white;
+}
+
+.register-another:hover {
+    background: linear-gradient(135deg, #0d47a1, #2196F3);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(33, 150, 243, 0.3);
+}
+
+.view-records {
+    background: linear-gradient(135deg, #607D8B, #37474F);
+    color: white;
+}
+
+.view-records:hover {
+    background: linear-gradient(135deg, #37474F, #607D8B);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(96, 125, 139, 0.3);
+}
+
+.print-section {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.print-btn {
+    background: #f5f5f5;
+    border: none;
+    color: #555;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.print-btn:hover {
+    color: #2196F3;
+    background: #e9f5fe;
+    box-shadow: 0 4px 8px rgba(33, 150, 243, 0.15);
+}
+
+.print-btn svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.success-card {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Print styles */
+@media print {
+    nav,
+    .action-buttons,
+    .print-section {
+        display: none;
+    }
+
+    .success-card {
+        box-shadow: none;
+        padding: 0;
+        animation: none;
+    }
+
+    body {
+        padding: 20px;
+        font-size: 12pt;
+    }
+    
+    .patient-details {
+        background-color: white;
+        padding: 0;
+    }
+    
+    .success-icon {
+        background: #4CAF50;
+        box-shadow: none;
+    }
+}

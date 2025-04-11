@@ -1,0 +1,15 @@
+# Ensure PHP files are processed correctly
+AddType application/x-httpd-php .php
+
+# Set default index files
+DirectoryIndex index.php index.html
+
+# Enable URL rewriting
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /project/
+    
+    # If the file exists as a PHP file, serve it directly
+    RewriteCond %{REQUEST_FILENAME}.php -f
+    RewriteRule ^(.*)$ $1.php [L]
+</IfModule>
